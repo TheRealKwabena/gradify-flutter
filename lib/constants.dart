@@ -9,3 +9,6 @@ const kOnBoardingHeadingTextStyle = TextStyle(
   fontSize: 32.0,
   color: Colors.white,
 );
+
+const kAuthScreenTextStyle =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0, color: Colors.black);

@@ -6,13 +6,17 @@ class AuthenticationButton extends StatelessWidget {
 
   final String text;
   final Color textColor;
+  VoidCallback? onPressed;
 
   AuthenticationButton(
-      {required this.buttonColor, required this.text, required this.textColor});
+      {required this.buttonColor,
+      required this.text,
+      required this.textColor,
+      this.onPressed});
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
         decoration: BoxDecoration(
