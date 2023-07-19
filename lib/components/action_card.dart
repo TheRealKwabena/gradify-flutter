@@ -50,7 +50,14 @@ class MainActionCard extends StatelessWidget {
         ),
         decoration: BoxDecoration(
             color: kHomePageMainColor,
-            borderRadius: BorderRadius.circular(10.0)),
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: [
+              BoxShadow(
+                color: Color.fromRGBO(0, 0, 0, 0.25),
+                offset: Offset(0, 4),
+                blurRadius: 4.0
+              )
+            ]),
       ),
     );
   }
