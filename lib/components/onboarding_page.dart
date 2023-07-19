@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradify_flutter/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/pages/auth_bottom_sheet.dart';
+import 'package:gradify_flutter/pages/home_page.dart';
 import 'auth_button.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -65,6 +66,9 @@ class OnBoardingPage extends StatelessWidget {
                   buttonColor: Colors.white,
                   text: 'Sign Up',
                   textColor: Colors.black,
+                  onPressed: () {
+                    Navigator.pushNamed(context, HomePage.id);
+                  },
                 ),
               ],
             )
