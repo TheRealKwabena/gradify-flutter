@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradify_flutter/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gradify_flutter/pages/auth_bottom_sheet.dart';
 import 'auth_button.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -52,6 +53,13 @@ class OnBoardingPage extends StatelessWidget {
                   buttonColor: Colors.black,
                   text: 'Login',
                   textColor: Colors.white,
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Colors.transparent,
+                        isScrollControlled: true,
+                        builder: (context) => AuthBottomSheet());
+                  },
                 ),
                 AuthenticationButton(
                   buttonColor: Colors.white,
