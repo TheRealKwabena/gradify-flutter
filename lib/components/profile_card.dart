@@ -25,7 +25,7 @@ class ProfileCard extends StatelessWidget {
               text.toString(),
               style: GoogleFonts.montserrat(
                   textStyle: kOnBoardingHeadingTextStyle.copyWith(
-                      fontSize: 15.0, fontWeight: FontWeight.w500)),
+                      fontSize: 15.0, fontWeight: FontWeight.w700)),
             ),
             SizedBox(
               height: 5.0,
