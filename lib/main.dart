@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradify_flutter/pages/actions.dart';
 import 'package:gradify_flutter/pages/home_page.dart';
 import 'package:gradify_flutter/pages/onboarding.dart';
+import 'package:gradify_flutter/pages/upload_grade.dart';
 
 void main() {
   runApp(const GradifyApp());
@@ -18,7 +19,8 @@ class GradifyApp extends StatelessWidget {
       routes: {
         OnBoarding.id: (context) => OnBoarding(),
         HomePage.id: (context) => HomePage(),
-        AllActionsPage.id: (context) => AllActionsPage()
+        AllActionsPage.id: (context) => AllActionsPage(),
+        UploadGradePage.id: (context) => UploadGradePage()
       },
       //home: OnBoarding(),
     );

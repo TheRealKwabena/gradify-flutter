@@ -14,10 +14,12 @@ class OnBoarding extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         //backgroundColor: ,
-        body: OnBoardingPage(
-          text: 'Compare students \nin Gradify',
-          color: kOnboardingPrimaryColor,
-          imageLink: 'images/radar_chart.jpg',
+        body: SingleChildScrollView(
+          child: OnBoardingPage(
+            text: 'Compare students \nin Gradify',
+            color: kOnboardingPrimaryColor,
+            imageLink: 'images/radar_chart.jpg',
+          ),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
 import 'package:gradify_flutter/pages/actions.dart';
+import 'package:gradify_flutter/pages/upload_grade.dart';
 
 import '../components/action_card.dart';
 import '../components/profile_card.dart';
@@ -156,6 +157,9 @@ class _HomePageState extends State<HomePage> {
                       MainActionCard(
                         imageLink: 'images/uploadicon.jpg',
                         text: 'Upload Subject Grades',
+                        onPressed: () {
+                          Navigator.pushNamed(context, UploadGradePage.id);
+                        },
                       ),
                       MainActionCard(
                         imageLink: 'images/bar-chart.jpg',
