@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradify_flutter/pages/actions.dart';
 import 'package:gradify_flutter/pages/home_page.dart';
 import 'package:gradify_flutter/pages/onboarding.dart';
 
@@ -16,7 +17,8 @@ class GradifyApp extends StatelessWidget {
       initialRoute: OnBoarding.id,
       routes: {
         OnBoarding.id: (context) => OnBoarding(),
-        HomePage.id: (context) => HomePage()
+        HomePage.id: (context) => HomePage(),
+        AllActionsPage.id: (context) => AllActionsPage()
       },
       //home: OnBoarding(),
     );

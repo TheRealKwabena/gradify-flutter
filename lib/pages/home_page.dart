@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
+import 'package:gradify_flutter/pages/actions.dart';
 
 import '../components/action_card.dart';
 import '../components/profile_card.dart';
@@ -124,7 +125,9 @@ class _HomePageState extends State<HomePage> {
                                     fontWeight: FontWeight.normal)),
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, AllActionsPage.id);
+                              },
                               icon: Icon(Icons.arrow_forward_ios))
                         ],
                       ),
