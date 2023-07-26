@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
 import 'package:gradify_flutter/pages/actions.dart';
+import 'package:gradify_flutter/pages/radar_chart.dart';
 import 'package:gradify_flutter/pages/upload_grade.dart';
 
 import '../components/action_card.dart';
@@ -142,6 +143,10 @@ class _HomePageState extends State<HomePage> {
                         MainActionCard(
                           imageLink: 'images/radar_chart.jpg',
                           text: 'Compare Student Grades',
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, ComparisonChartPage.id);
+                          },
                         ),
                         MainActionCard(
                           imageLink: 'images/gold-medal-removebg-preview.jpg',
