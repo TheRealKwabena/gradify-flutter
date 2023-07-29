@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradify_flutter/pages/actions.dart';
 import 'package:gradify_flutter/pages/home_page.dart';
 import 'package:gradify_flutter/pages/onboarding.dart';
+import 'package:gradify_flutter/pages/radar_chart.dart';
 import 'package:gradify_flutter/pages/upload_grade.dart';
 
 void main() {
@@ -20,7 +21,8 @@ class GradifyApp extends StatelessWidget {
         OnBoarding.id: (context) => OnBoarding(),
         HomePage.id: (context) => HomePage(),
         AllActionsPage.id: (context) => AllActionsPage(),
-        UploadGradePage.id: (context) => UploadGradePage()
+        UploadGradePage.id: (context) => UploadGradePage(),
+        ComparisonChartPage.id: (context) => ComparisonChartPage()
       },
       //home: OnBoarding(),
     );
