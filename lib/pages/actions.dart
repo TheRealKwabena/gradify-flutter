@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
+import 'package:gradify_flutter/pages/gpa_calculation_page.dart';
 
 import '../components/action_card.dart';
 
@@ -76,6 +77,7 @@ class AllActionsPage extends StatelessWidget {
                       MainActionCard(
                         imageLink: 'images/graduation-cap.jpg',
                         text: 'Calculate GPA',
+                        onPressed: () => Navigator.pushNamed(context, GPACalculationPage.id),
                       ),
                     ],
                   )),
