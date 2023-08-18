@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^4.0.4
   flutter_onboarding_slider: ^1.0.9
   fl_chart: ^0.62.0
+  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:
