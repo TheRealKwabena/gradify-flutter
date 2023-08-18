@@ -4,11 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants.dart';
 
 class MainActionCard extends StatelessWidget {
-  final String imageLink;
+  final IconData icon;
   final String text;
   final VoidCallback? onPressed;
 
-  MainActionCard({required this.imageLink, required this.text, this.onPressed});
+  MainActionCard({required this.icon, required this.text, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,20 +21,10 @@ class MainActionCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  color: kHomePageMainColor,
-                  image: DecorationImage(
-                      image: AssetImage(
-                        imageLink,
-                      ),
-                      fit: BoxFit.fill),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10.0),
-                  ),
-                ),
+              Icon(
+                icon,
+                size: 30.0,
+                color: Colors.amberAccent,
               ),
               SizedBox(
                 height: 5.0,
@@ -53,10 +43,9 @@ class MainActionCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.25),
-                offset: Offset(0, 4),
-                blurRadius: 4.0
-              )
+                  color: Color.fromRGBO(0, 0, 0, 0.25),
+                  offset: Offset(0, 4),
+                  blurRadius: 4.0)
             ]),
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
+
 import 'package:gradify_flutter/pages/actions.dart';
 import 'package:gradify_flutter/pages/radar_chart.dart';
 import 'package:gradify_flutter/pages/upload_grade.dart';
@@ -141,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         MainActionCard(
-                          imageLink: 'images/radar_chart.jpg',
+                          icon: Icons.compare_arrows_sharp,
                           text: 'Compare Student Grades',
                           onPressed: () {
                             Navigator.pushNamed(
@@ -149,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                           },
                         ),
                         MainActionCard(
-                          imageLink: 'images/gold-medal-removebg-preview.jpg',
+                          icon: FontAwesomeIcons.medal,
                           text: 'See Best Performing Subjects',
                         ),
                         //MainActionCard(imageLink:'images/gold-medal-removebg-preview.jpg', text: 'Compare Student Grades',),
@@ -160,14 +162,14 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       MainActionCard(
-                        imageLink: 'images/uploadicon.jpg',
+                        icon: Icons.cloud_upload_outlined,
                         text: 'Upload Subject Grades',
                         onPressed: () {
                           Navigator.pushNamed(context, UploadGradePage.id);
                         },
                       ),
                       MainActionCard(
-                        imageLink: 'images/bar-chart.jpg',
+                        icon: Icons.auto_graph_rounded,
                         text: 'Visualize Your Academic Progress',
                       ),
                       //MainActionCard(imageLink:'images/gold-medal-removebg-preview.jpg', text: 'Compare Student Grades',),

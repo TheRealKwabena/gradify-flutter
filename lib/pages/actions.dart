@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
+
+import 'package:gradify_flutter/pages/gpa_calculation_page.dart';
 
 import '../components/action_card.dart';
 
@@ -58,24 +61,26 @@ class AllActionsPage extends StatelessWidget {
                     crossAxisCount: 2,
                     children: [
                       MainActionCard(
-                        imageLink: 'images/radar_chart.jpg',
+                        icon: Icons.compare_arrows_sharp,
                         text: 'Compare Student Grades',
                       ),
                       MainActionCard(
-                        imageLink: 'images/gold-medal-removebg-preview.jpg',
+                        icon: FontAwesomeIcons.medal,
                         text: 'See Best Performing Subjects',
                       ),
                       MainActionCard(
-                        imageLink: 'images/uploadicon.jpg',
+                        icon: Icons.cloud_upload_outlined,
                         text: 'Upload Subject Grades',
                       ),
                       MainActionCard(
-                        imageLink: 'images/bar-chart.jpg',
+                        icon: Icons.auto_graph_rounded,
                         text: 'Visualize Your Academic Progress',
                       ),
                       MainActionCard(
-                        imageLink: 'images/graduation-cap.jpg',
+                        icon: FontAwesomeIcons.graduationCap,
                         text: 'Calculate GPA',
+                        onPressed: () =>
+                            Navigator.pushNamed(context, GPACalculationPage.id),
                       ),
                     ],
                   )),
