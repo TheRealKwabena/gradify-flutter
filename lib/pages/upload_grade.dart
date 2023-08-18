@@ -78,6 +78,10 @@ class _UploadGradePageState extends State<UploadGradePage> {
                             color: kTextFieldColor,
                           ),
                           child: TextField(
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(),
+                            ),
                             onChanged: (String value) {
                               setState(() {
                                 subjectName = value;
@@ -111,6 +115,10 @@ class _UploadGradePageState extends State<UploadGradePage> {
                             color: kTextFieldColor,
                           ),
                           child: TextField(
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(),
+                            ),
                             onChanged: (String value) {
                               setState(() {
                                 academicYear = value;
@@ -200,14 +208,19 @@ class _UploadGradePageState extends State<UploadGradePage> {
                             color: kTextFieldColor,
                           ),
                           child: TextField(
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(),
+                            ),
                             onChanged: (String value) {
                               setState(() {
                                 grade = double.parse(value);
                               });
                             },
                             decoration: InputDecoration(
-                                border: InputBorder.none,
-                                focusColor: kHomePageMainColor),
+                              border: InputBorder.none,
+                              focusColor: kHomePageMainColor,
+                            ),
                           ),
                         )
                       ],
