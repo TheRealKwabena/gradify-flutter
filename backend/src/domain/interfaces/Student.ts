@@ -5,10 +5,16 @@ export class Student implements IStudent {
 
     grades: Array<IStudentGrade>;
 
-    constructor(name: string, grades: Array<IStudentGrade>) {
+    gpa: Number;
+    cumulativeScore: Number;
+    
+    constructor(name: string) {
         this.name = name;
-        this.grades = grades
+        this.grades = [];
+        this.gpa = 0.0;
+        this.cumulativeScore = 0.0;
     }
+  
 
 
 }

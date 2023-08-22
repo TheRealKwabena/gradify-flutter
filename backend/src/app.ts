@@ -1,10 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-//import routes from './routes';
+import studentRoutes from './routes/StudentRoutes';
 import cors from 'cors';
+import studentGradeRoutes from './routes/StudentGradeRoutes';
+
 
 const app = express();
+
 
 // Middleware
 app.use(cors());
@@ -26,3 +29,7 @@ mongoose.connect('mongodb+srv://gradify:graDify1259.@cluster0.vzy8upx.mongodb.ne
 .catch((error) => {
   console.error('Error connecting to MongoDB:', error);
 });
+
+app.use('/api/student/*', studentRoutes);
+
+app.use('/api/studentGrades/*', studentGradeRoutes);
