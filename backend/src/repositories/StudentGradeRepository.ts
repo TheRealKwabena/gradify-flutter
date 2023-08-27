@@ -3,6 +3,7 @@ import { IStudentGradeRepository } from "../domain/interfaces/IStudentGradeRepos
 import { StudentGrade } from "../domain/interfaces/StudentGrade";
 import Grade from '../models/StudentGradeSchema';
 import StudentSchema from "../models/StudentSchema";
+
 export class StudentGradeRepository implements IStudentGradeRepository{
     public async addStudentGrade(owner: string, studentGrade: IStudentGrade): Promise<void> {
         const actualStudentGrade = new StudentGrade(studentGrade.name, studentGrade.academicYear, studentGrade.semester, studentGrade.grade, owner);

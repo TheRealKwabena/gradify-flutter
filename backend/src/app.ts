@@ -14,7 +14,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
-//app.use('/api', routes);
+app.use('/api', studentRoutes);
+app.use('/api', studentGradeRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
@@ -30,6 +31,6 @@ mongoose.connect('mongodb+srv://gradify:graDify1259.@cluster0.vzy8upx.mongodb.ne
   console.error('Error connecting to MongoDB:', error);
 });
 
-app.use('/api/student/*', studentRoutes);
+//app.use('/api/student/*', studentRoutes);
 
-app.use('/api/studentGrades/*', studentGradeRoutes);
+//app.use('/api/studentGrade/*', studentGradeRoutes);

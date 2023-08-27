@@ -5,9 +5,9 @@ import { StudentGrade } from "../domain/interfaces/StudentGrade";
 import { Request, Response } from 'express';
 import StudentSchema from "../models/StudentSchema";
 export class StudentRepository implements IStudentRepository{
-    public async createStudent(student: Student): Promise<void> {
+    public async createStudent(student: Student): Promise<Student| null> {
         
-        await StudentSchema.create(student);
+        return await StudentSchema.create(student);
     }
     public async getStudent(studentId: string): Promise<Student | null>  {
         const student = await StudentSchema.findOne({_id: studentId});
