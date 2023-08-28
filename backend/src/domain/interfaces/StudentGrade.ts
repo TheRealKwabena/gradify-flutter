@@ -5,12 +5,14 @@ export class StudentGrade implements IStudentGrade {
     academicYear: Number;
     semester: string;
     grade: Number;
+    owner: string;
 
-    constructor(name: string, academicYear: Number, semester: string, grade: Number) {
+    constructor(name: string, academicYear: Number, semester: string, grade: Number, owner:string ) {
         this.name = name;
         this.academicYear = academicYear;
         this.semester = semester;
         this.grade = grade
+        this.owner = owner;
     }
 
     
