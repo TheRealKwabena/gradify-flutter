@@ -34,7 +34,7 @@ class StudentGradeController{
     
             
             
-            res.status(201).json({message: 'Grade added'});
+            res.status(200).json({message: 'Grade added'});
         }catch(error) {
             console.log(error)
             res.status(400).json({message: Constants.GRADE_OTHER_ERROR});
@@ -69,7 +69,7 @@ class StudentGradeController{
                 }
             }
             //const grades = studentGrades;
-            res.status(201).json(grades);
+            res.status(200).json(grades);
         }catch(ex) {
             res.status(400).json({message: Constants.STUDENT_EXISTENCE_ERROR_MESSAGE});
         }
@@ -90,7 +90,7 @@ class StudentGradeController{
                 }
             }
             //const grades = studentGrades;
-            res.status(201).json(grades);
+            res.status(200).json(grades);
         }catch(ex) {
             res.status(400).json({message: Constants.STUDENT_EXISTENCE_ERROR_MESSAGE});
         }
