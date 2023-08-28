@@ -14,6 +14,7 @@ class StudentController{
 
   static async addStudent(req:Request, res: Response) {
     try {
+      
       const student = await  Student.create(req.body);
       //const student = await this.studentRepository.createStudent(req.body);
       res.status(201).json(student);
@@ -21,6 +22,15 @@ class StudentController{
     catch(error) {
       console.log(error);
       res.status(400).json({message :Constants.STUDENT_OTHER_ERROR});
+    }
+  }
+  static async getAllStudents(req: Request, res: Response) {
+    try {
+      const students = await Student.find({});
+      res.status(200).json(students);
+    } catch(error) {
+      console.log(error);
+      res.status(500).json({message: "Internal Server Error"});
     }
   }
 

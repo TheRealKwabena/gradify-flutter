@@ -1,6 +1,6 @@
 import mongoose, {Schema} from "mongoose";
 import { Student } from "../domain/interfaces/Student";
-
+import StudentGradeSchema from "./StudentGradeSchema";
 const studentSchema : Schema = new Schema({
     name: {type: String},
     grades: [{

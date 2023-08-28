@@ -6,8 +6,10 @@ import { StudentRepository } from '../repositories/StudentRepository';
 const router = express.Router();
 
 
-router.get('/student/:studentId', StudentController.getSpecificStudent);
+router.get('/students/:studentId', StudentController.getSpecificStudent);
 
-router.post('/student', StudentController.addStudent);
+router.get('/students', StudentController.getAllStudents);
+
+router.post('/students', StudentController.addStudent);
 
 export default router;

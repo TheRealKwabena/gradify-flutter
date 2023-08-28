@@ -3,7 +3,7 @@ import { IStudentGrade } from './IStudentGrade';
 export class Student implements IStudent {
     name: string;
 
-    grades: Array<IStudentGrade>;
+    grades: Array<any>;
 
     gpa: Number;
     cumulativeScore: Number;
