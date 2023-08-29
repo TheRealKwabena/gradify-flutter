@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gradify_flutter/business_logic/GradifyBrain.dart';
 import 'package:gradify_flutter/constants.dart';
 
 class GPACalculationPage extends StatefulWidget {
@@ -26,6 +27,9 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
 
   String selectedSemester = 'All Semesters';
   String selectedYear = '2023';
+  double cumulativeScore = 0.0;
+  double gpa = 0.0;
+  GradifyBrain gradifyBrain = GradifyBrain();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -158,7 +162,15 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                         width: 5.0,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            gradifyBrain.calculateCumulativeScore();
+                            gradifyBrain.calculateGPA();
+                            cumulativeScore = gradifyBrain
+                                .gpaInformation["cumulative_score"]!;
+                            gpa = gradifyBrain.gpaInformation["gpa"]!;
+                          });
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 10.0, vertical: 15.0),
@@ -230,17 +242,15 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                     child: Container(
                       height: 270.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFF2032A6),
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.25),
-                            spreadRadius: 1,
-                            blurRadius: 4,
-                            offset: Offset(0,4)
-                          )
-                        ]
-                      ),
+                          color: Color(0xFF2032A6),
+                          borderRadius: BorderRadius.circular(20.0),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.25),
+                                spreadRadius: 1,
+                                blurRadius: 4,
+                                offset: Offset(0, 4))
+                          ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -253,7 +263,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                                     fontWeight: FontWeight.w600)),
                           ),
                           Text(
-                            "3.97/4.0",
+                            "${gpa}/4.0",
                             style: GoogleFonts.montserrat(
                                 textStyle: TextStyle(
                               color: Color(0xFF3BC741),
@@ -278,17 +288,15 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                     child: Container(
                       height: 270.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFF2032A6),
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.25),
-                            spreadRadius: 1,
-                            blurRadius: 4,
-                            offset: Offset(0,4)
-                          )
-                        ]
-                      ),
+                          color: Color(0xFF2032A6),
+                          borderRadius: BorderRadius.circular(20.0),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.25),
+                                spreadRadius: 1,
+                                blurRadius: 4,
+                                offset: Offset(0, 4))
+                          ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -301,7 +309,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                                     fontWeight: FontWeight.w600)),
                           ),
                           Text(
-                            "96.85/100",
+                            "${cumulativeScore}/100",
                             style: GoogleFonts.montserrat(
                                 textStyle: TextStyle(
                               color: Color(0xFF3BC741),
