@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../business_logic/GradifyBrain.dart';
 import '../constants.dart';
 
 class UploadGradePage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
   String subjectName = '';
   String academicYear = '';
   double grade = 0.0;
+  GradifyBrain gradifyBrain = GradifyBrain();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -216,7 +218,15 @@ class _UploadGradePageState extends State<UploadGradePage> {
                       height: 100,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        if (selectedSemester.isEmpty &&
+                            academicYear.isEmpty &&
+                            subjectName.isEmpty) {
+                          print("Fill all fields");
+                        }
+                        gradifyBrain.addGrade(
+                            selectedSemester, subjectName, academicYear, grade);
+                      },
                       child: Container(
                         padding: EdgeInsets.symmetric(
                             vertical: 20.0, horizontal: 10.0),

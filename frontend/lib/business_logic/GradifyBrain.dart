@@ -66,11 +66,30 @@ class GradifyBrain {
     double gradePoint = 0.0;
     double gradePointSum = 0.0;
     //List<double> gradePoints = [];
-    for (dynamic grade in gradeList) {
-      gradePoint = deduceGradePoint(grade["grade"]);
-      gradePointSum += gradePoint;
+    for (int i = 0; i < gradeList.length; i++) {
+      gradePointSum += deduceGradePoint(gradeList[i]["grade"]);
+      print(gradePointSum);
     }
     double result = gradePointSum / gradeList.length;
+    print(result);
     gpaInformation["gpa"] = result.truncateToDouble();
+  }
+
+  void addGrade(
+      String semester, String name, String academicYear, double grade) async {
+    var url = Uri.http(HOST, GRADE_API_URL);
+    var gradeBody = {
+      "name": name,
+      "academicYear": academicYear,
+      "semester": semester,
+      "grade": grade
+    };
+    var response = await http.post(url, body: gradeBody);
+    var data = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      print(data["message"]);
+    } else {
+      print("Error");
+    }
   }
 }
