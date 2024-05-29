@@ -7,7 +7,7 @@ class GradifyBrain {
   static final String STUDENT_API_URL = '/api/students/${id}';
   static final String GRADE_API_URL = '/api/studentGrade/${id}/grades';
   //static List<>
-  List<dynamic> grades = [];
+  static List<dynamic> grades = [];
   Map<String, double> gpaInformation = {'gpa': 0.0, 'cumulative_score': 0.0};
 
   GradifyBrain();
@@ -15,26 +15,33 @@ class GradifyBrain {
   Future<dynamic> getAllGrades() async {
     var url = Uri.http(HOST, GRADE_API_URL);
     print(url);
-    var response = await http.get(url);
     var data;
-    if (response.statusCode == 200) {
-      data = jsonDecode(response.body);
-    } else {
-      data = "Error";
+    try {
+      var response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        data = jsonDecode(response.body);
+      } else {
+        data = "Error";
+      }
+    } catch (exception) {
+      print("Error has occured");
     }
     return data;
   }
 
   void calculateCumulativeScore() async {
-    var grades = await getAllGrades();
-    var gradeList = grades["grades"];
+    ///var grades = await getAllGrades();
+    var gradeList = grades;
     double totalGradeSum = 0.0;
-    for (int i = 0; i < gradeList.length; i++) {
-      totalGradeSum += gradeList[i]["grade"];
-    }
-    double average = totalGradeSum / gradeList.length;
+    if (!grades.isEmpty) {
+      for (int i = 0; i < gradeList.length; i++) {
+        totalGradeSum += gradeList[i]["grade"];
+      }
+      double average = totalGradeSum / gradeList.length;
 
-    gpaInformation["cumulative_score"] = average.truncateToDouble();
+      gpaInformation["cumulative_score"] = average.truncateToDouble();
+    }
   }
 
   double deduceGradePoint(double grade) {
@@ -78,12 +85,14 @@ class GradifyBrain {
   void addGrade(
       String semester, String name, String academicYear, double grade) async {
     var url = Uri.http(HOST, GRADE_API_URL);
+    //var convertedGrade = double.tryParse(grade);
     var gradeBody = {
       "name": name,
       "academicYear": academicYear,
       "semester": semester,
       "grade": grade
     };
+    print(gradeBody);
     var response = await http.post(url, body: gradeBody);
     var data = jsonDecode(response.body);
     if (response.statusCode == 200) {

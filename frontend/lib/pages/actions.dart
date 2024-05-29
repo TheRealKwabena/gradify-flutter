@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
 
 import 'package:gradify_flutter/pages/gpa_calculation_page.dart';
+import 'package:gradify_flutter/pages/BarChartSample2.dart';
+import 'package:gradify_flutter/pages/upload_grade.dart';
 
 import '../components/action_card.dart';
 
@@ -71,10 +73,14 @@ class AllActionsPage extends StatelessWidget {
                       MainActionCard(
                         icon: Icons.cloud_upload_outlined,
                         text: 'Upload Subject Grades',
+                        onPressed: () =>
+                            Navigator.pushNamed(context, UploadGradePage.id),
                       ),
                       MainActionCard(
                         icon: Icons.auto_graph_rounded,
                         text: 'Visualize Your Academic Progress',
+                        onPressed: () =>
+                            {Navigator.pushNamed(context, BarChartSample2.id)},
                       ),
                       MainActionCard(
                         icon: FontAwesomeIcons.graduationCap,

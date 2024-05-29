@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradify_flutter/pages/actions.dart';
 import 'package:gradify_flutter/pages/gpa_calculation_page.dart';
+import 'package:gradify_flutter/pages/BarChartSample2.dart';
 import 'package:gradify_flutter/pages/home_page.dart';
 import 'package:gradify_flutter/pages/onboarding.dart';
 import 'package:gradify_flutter/pages/radar_chart.dart';
@@ -24,7 +25,8 @@ class GradifyApp extends StatelessWidget {
         AllActionsPage.id: (context) => AllActionsPage(),
         UploadGradePage.id: (context) => UploadGradePage(),
         ComparisonChartPage.id: (context) => ComparisonChartPage(),
-        GPACalculationPage.id: (context) => GPACalculationPage()
+        GPACalculationPage.id: (context) => GPACalculationPage(),
+        BarChartSample2.id: (context) => BarChartSample2()
       },
       //home: OnBoarding(),
     );

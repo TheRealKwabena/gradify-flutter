@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.kobbiecode.gradify_flutter.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.kobbiecode.gradify_flutter.app-mergeDebugResources-14:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/home/kwabena/StudioProjects/gradify-flutter/frontend/android/app/src/main/res/values-night/styles.xml",
