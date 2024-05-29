@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1017348766239",
+    "project_id": "gradify-cac83",
+    "storage_bucket": "gradify-cac83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017348766239:android:16b83ca86a1046ca69b32a",
+        "android_client_info": {
+          "package_name": "com.kobbiecode.gradify_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017348766239-4j8u8gqlpbs34p3ktpmbbjameirs6pkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkrAzEcQvCtg3E_rX95ZnERarRQnzlJEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017348766239-4j8u8gqlpbs34p3ktpmbbjameirs6pkl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1017348766239-r1i0qh87pgbt5itmr1d5behlbk43no1h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kobbiecode.gradifyFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -48,3 +48,6 @@ backend/node_modules
 
 # Env files
 backend/.env
+
+#Build files
+frontend/build
