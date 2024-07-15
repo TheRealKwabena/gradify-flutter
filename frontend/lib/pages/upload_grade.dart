@@ -6,7 +6,7 @@ import '../constants.dart';
 
 class UploadGradePage extends StatefulWidget {
   const UploadGradePage({super.key});
-  static final String id = '/upload-grade';
+  static const String id = '/upload-grade';
 
   @override
   State<UploadGradePage> createState() => _UploadGradePageState();
@@ -35,7 +35,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
             children: [
               Container(
                 height: 113.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: kHomePageMainColor,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30.0),
@@ -48,7 +48,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(Icons.arrow_back_ios))
+                        icon: const Icon(Icons.arrow_back_ios))
                   ],
                 ),
               ),
@@ -65,7 +65,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                           textStyle: kAuthScreenTextStyle.copyWith(
                               fontSize: 32.0, fontWeight: FontWeight.w500)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     Row(
@@ -77,7 +77,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                                 fontSize: 15.0, fontWeight: FontWeight.normal),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20.0,
                         ),
                         Container(
@@ -85,7 +85,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                           height: 36.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
-                            border: Border.symmetric(
+                            border: const Border.symmetric(
                                 vertical: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -105,13 +105,13 @@ class _UploadGradePageState extends State<UploadGradePage> {
                                 });
                               },
                               decoration:
-                                  InputDecoration(border: InputBorder.none),
+                                  const InputDecoration(border: InputBorder.none),
                             ),
                           ),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     Row(
@@ -123,7 +123,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.normal)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20.0,
                         ),
                         DropdownButton<String>(
@@ -137,7 +137,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                               child: Text(
                                 academicYear,
                                 style: GoogleFonts.montserrat(
-                                    textStyle: TextStyle()),
+                                    textStyle: const TextStyle()),
                               ),
                             );
                           }).toList(),
@@ -149,7 +149,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     Row(
@@ -161,7 +161,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.normal)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 60.0,
                         ),
                         DropdownButton<String>(
@@ -175,7 +175,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                               child: Text(
                                 semester,
                                 style: GoogleFonts.montserrat(
-                                    textStyle: TextStyle()),
+                                    textStyle: const TextStyle()),
                               ),
                             );
                           }).toList(),
@@ -206,7 +206,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                          */
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     Row(
@@ -218,7 +218,7 @@ class _UploadGradePageState extends State<UploadGradePage> {
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.normal)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 86.0,
                         ),
                         DropdownButton<String>(
@@ -232,20 +232,20 @@ class _UploadGradePageState extends State<UploadGradePage> {
                               child: Text(
                                 grade,
                                 style: GoogleFonts.montserrat(
-                                    textStyle: TextStyle()),
+                                    textStyle: const TextStyle()),
                               ),
                             );
                           }).toList(),
                           onChanged: (String? value) {
                             setState(() {
                               selectedGrade = value!;
-                              grade = double.parse(value!);
+                              grade = double.parse(value);
                             });
                           },
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 100,
                     ),
                     TextButton(
@@ -261,13 +261,13 @@ class _UploadGradePageState extends State<UploadGradePage> {
                         }
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             vertical: 20.0, horizontal: 10.0),
                         width: double.infinity,
                         decoration: BoxDecoration(
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(10.0),
-                            boxShadow: [BoxShadow(color: Colors.black)]),
+                            boxShadow: const [BoxShadow(color: Colors.black)]),
                         child: Text(
                           'Save',
                           textAlign: TextAlign.center,

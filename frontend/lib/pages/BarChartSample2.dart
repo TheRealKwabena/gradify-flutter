@@ -56,7 +56,7 @@ class BarChartSample2State extends State<BarChartSample2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration: BoxDecoration(color: Colors.white),
+        decoration: const BoxDecoration(color: Colors.white),
         child: AspectRatio(
           aspectRatio: 1,
           child: Padding(
@@ -93,7 +93,6 @@ class BarChartSample2State extends State<BarChartSample2> {
                       maxY: 20,
                       barTouchData: BarTouchData(
                         touchTooltipData: BarTouchTooltipData(
-                          tooltipBgColor: Colors.grey,
                           getTooltipItem: (a, b, c, d) => null,
                         ),
                         touchCallback: (FlTouchEvent event, response) {

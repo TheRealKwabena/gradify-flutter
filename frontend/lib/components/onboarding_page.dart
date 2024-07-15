@@ -10,8 +10,8 @@ class OnBoardingPage extends StatelessWidget {
   final String text;
   final String imageLink;
 
-  OnBoardingPage(
-      {required this.color, required this.text, required this.imageLink});
+  const OnBoardingPage(
+      {super.key, required this.color, required this.text, required this.imageLink});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class OnBoardingPage extends StatelessWidget {
               style: GoogleFonts.montserrat(
                   textStyle: kOnBoardingHeadingTextStyle),
             ),
-            SizedBox(
+            const SizedBox(
               height: 200.0,
             ),
             Container(
@@ -39,12 +39,12 @@ class OnBoardingPage extends StatelessWidget {
                       imageLink,
                     ),
                     fit: BoxFit.fill),
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(10.0),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 100.0,
             ),
             Row(
@@ -59,7 +59,7 @@ class OnBoardingPage extends StatelessWidget {
                         context: context,
                         backgroundColor: Colors.transparent,
                         isScrollControlled: true,
-                        builder: (context) => AuthBottomSheet());
+                        builder: (context) => const AuthBottomSheet());
                   },
                 ),
                 AuthenticationButton(

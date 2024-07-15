@@ -2,10 +2,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class GradifyBrain {
-  static final String HOST = '10.0.2.2:3000';
+  static const String HOST = '10.0.2.2:3000';
   static var id = "64eb366e3f263279320e97d5";
-  static final String STUDENT_API_URL = '/api/students/${id}';
-  static final String GRADE_API_URL = '/api/studentGrade/${id}/grades';
+  static final String STUDENT_API_URL = '/api/students/$id';
+  static final String GRADE_API_URL = '/api/studentGrade/$id/grades';
   //static List<>
   static List<dynamic> grades = [];
   Map<String, double> gpaInformation = {'gpa': 0.0, 'cumulative_score': 0.0};
@@ -34,7 +34,7 @@ class GradifyBrain {
     ///var grades = await getAllGrades();
     var gradeList = grades;
     double totalGradeSum = 0.0;
-    if (!grades.isEmpty) {
+    if (grades.isNotEmpty) {
       for (int i = 0; i < gradeList.length; i++) {
         totalGradeSum += gradeList[i]["grade"];
       }

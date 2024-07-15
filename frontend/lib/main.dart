@@ -20,12 +20,12 @@ class GradifyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: OnBoarding.id,
       routes: {
-        OnBoarding.id: (context) => OnBoarding(),
-        HomePage.id: (context) => HomePage(),
-        AllActionsPage.id: (context) => AllActionsPage(),
-        UploadGradePage.id: (context) => UploadGradePage(),
-        ComparisonChartPage.id: (context) => ComparisonChartPage(),
-        GPACalculationPage.id: (context) => GPACalculationPage(),
+        OnBoarding.id: (context) => const OnBoarding(),
+        HomePage.id: (context) => const HomePage(),
+        AllActionsPage.id: (context) => const AllActionsPage(),
+        UploadGradePage.id: (context) => const UploadGradePage(),
+        ComparisonChartPage.id: (context) => const ComparisonChartPage(),
+        GPACalculationPage.id: (context) => const GPACalculationPage(),
         BarChartSample2.id: (context) => BarChartSample2()
       },
       //home: OnBoarding(),

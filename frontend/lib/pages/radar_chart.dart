@@ -4,7 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 import '../constants.dart';
 
 class ComparisonChartPage extends StatefulWidget {
-  static final String id = '/comparison_page';
+  static const String id = '/comparison_page';
   const ComparisonChartPage({super.key});
 
   @override
@@ -15,24 +15,24 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
   @override
   Widget build(BuildContext context) {
     List<RadarEntry> radarEntries = [
-      RadarEntry(value: 20.0),
-      RadarEntry(value: 10.0),
-      RadarEntry(value: 100.0),
-      RadarEntry(value: 100.0),
-      RadarEntry(value: 70.0),
-      RadarEntry(value: 10.0),
-      RadarEntry(value: 80.0),
-      RadarEntry(value: 100.0),
+      const RadarEntry(value: 20.0),
+      const RadarEntry(value: 10.0),
+      const RadarEntry(value: 100.0),
+      const RadarEntry(value: 100.0),
+      const RadarEntry(value: 70.0),
+      const RadarEntry(value: 10.0),
+      const RadarEntry(value: 80.0),
+      const RadarEntry(value: 100.0),
     ];
     List<RadarEntry> secondRadarEntries = [
-      RadarEntry(value: 90.0),
-      RadarEntry(value: 50.0),
-      RadarEntry(value: 60.0),
-      RadarEntry(value: 60.0),
-      RadarEntry(value: 90.0),
-      RadarEntry(value: 55.0),
-      RadarEntry(value: 60.0),
-      RadarEntry(value: 90.0),
+      const RadarEntry(value: 90.0),
+      const RadarEntry(value: 50.0),
+      const RadarEntry(value: 60.0),
+      const RadarEntry(value: 60.0),
+      const RadarEntry(value: 90.0),
+      const RadarEntry(value: 55.0),
+      const RadarEntry(value: 60.0),
+      const RadarEntry(value: 90.0),
     ];
     List<RadarDataSet> radarDataSet = [
       RadarDataSet(
@@ -50,7 +50,7 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
     bool relativeAngleMode = true;
     List<String> subjects = ["Physics", "Biology", "Chemistry", "Psychology"];
     RadarChartTitle deduceRadarTitle(int index, double angle) {
-      return RadarChartTitle(text: '', angle: 20.0);
+      return const RadarChartTitle(text: '', angle: 20.0);
     }
 
     return SafeArea(
@@ -59,7 +59,7 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height / 2,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: kHomePageMainColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20.0),
@@ -72,12 +72,13 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         IconButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(Icons.arrow_back_ios),
+                          icon: const Icon(Icons.arrow_back_ios),
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width / 4,
@@ -89,9 +90,8 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
                                   fontSize: 24.0, fontWeight: FontWeight.w500)),
                         )
                       ],
-                      mainAxisAlignment: MainAxisAlignment.start,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     Expanded(
@@ -101,16 +101,16 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
                             RadarChartData(
                               //gridBorderData: BorderSide(color: Colors.blue),
                               radarBorderData:
-                                  BorderSide(color: Colors.transparent),
+                                  const BorderSide(color: Colors.transparent),
                               borderData: FlBorderData(show: false),
                               tickBorderData:
                                   const BorderSide(color: Colors.transparent),
-                              gridBorderData: BorderSide(
+                              gridBorderData: const BorderSide(
                                 color: kHomePageMainColor,
                                 width: 2,
                               ),
                               titleTextStyle: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
+                                  textStyle: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 10.0,
                                       fontWeight: FontWeight.w500)),
@@ -141,7 +141,7 @@ class _ComparisonChartPageState extends State<ComparisonChartPage> {
                             ),
                           ),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     Expanded(

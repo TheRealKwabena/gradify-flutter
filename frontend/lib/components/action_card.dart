@@ -8,7 +8,7 @@ class MainActionCard extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
 
-  MainActionCard({required this.icon, required this.text, this.onPressed});
+  const MainActionCard({super.key, required this.icon, required this.text, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,6 +16,15 @@ class MainActionCard extends StatelessWidget {
       child: Container(
         height: 145.0,
         width: 160.0,
+        decoration: BoxDecoration(
+            color: kHomePageMainColor,
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.25),
+                  offset: Offset(0, 4),
+                  blurRadius: 4.0)
+            ]),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -26,7 +35,7 @@ class MainActionCard extends StatelessWidget {
                 size: 30.0,
                 color: Colors.amberAccent,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5.0,
               ),
               Text(
@@ -38,15 +47,6 @@ class MainActionCard extends StatelessWidget {
             ],
           ),
         ),
-        decoration: BoxDecoration(
-            color: kHomePageMainColor,
-            borderRadius: BorderRadius.circular(10.0),
-            boxShadow: [
-              BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.25),
-                  offset: Offset(0, 4),
-                  blurRadius: 4.0)
-            ]),
       ),
     );
   }

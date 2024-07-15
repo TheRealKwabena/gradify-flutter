@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^4.0.4
   flutter_onboarding_slider: ^1.0.9
-  fl_chart: ^0.62.0
+  fl_chart: ^0.68.0
   font_awesome_flutter: ^10.4.0
   http: ^0.13.6
   firebase_core: ^2.24.2
