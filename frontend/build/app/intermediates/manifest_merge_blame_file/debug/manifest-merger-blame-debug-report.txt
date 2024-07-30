@@ -27,8 +27,8 @@
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 21-->[androidx.core:core:1.6.0] C:\Users\kobbz\.gradle\caches\transforms-3\dc66a9e887fa197d342a9170a296fb1f\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 22        android:debuggable="true"
-23        android:icon="@mipmap/ic_launcher"
-24        android:label="gradify_flutter" >
+23        android:icon="@mipmap/launcher_icon"
+24        android:label="gradify" >
 25        <activity
 26            android:name="com.kobbiecode.gradify_flutter.MainActivity"
 27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

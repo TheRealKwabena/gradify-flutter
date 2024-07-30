@@ -20,8 +20,8 @@
         android:name="android.app.Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="gradify_flutter" >
+        android:icon="@mipmap/launcher_icon"
+        android:label="gradify" >
         <activity
             android:name="com.kobbiecode.gradify_flutter.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
