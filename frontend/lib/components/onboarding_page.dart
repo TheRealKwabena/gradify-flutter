@@ -3,6 +3,7 @@ import 'package:gradify_flutter/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/pages/auth_bottom_sheet.dart';
 import 'package:gradify_flutter/pages/home_page.dart';
+import 'package:gradify_flutter/pages/login_page.dart';
 import 'auth_button.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -11,7 +12,10 @@ class OnBoardingPage extends StatelessWidget {
   final String imageLink;
 
   const OnBoardingPage(
-      {super.key, required this.color, required this.text, required this.imageLink});
+      {super.key,
+      required this.color,
+      required this.text,
+      required this.imageLink});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class OnBoardingPage extends StatelessWidget {
               height: 200.0,
             ),
             Container(
-              height: 223.0,
+              height: MediaQuery.of(context).size.height / 3,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
@@ -55,11 +59,16 @@ class OnBoardingPage extends StatelessWidget {
                   text: 'Login',
                   textColor: Colors.white,
                   onPressed: () {
+                    /*
                     showModalBottomSheet(
                         context: context,
                         backgroundColor: Colors.transparent,
                         isScrollControlled: true,
                         builder: (context) => const AuthBottomSheet());
+                  },
+
+                     */
+                    Navigator.pushNamed(context, LoginPage.id);
                   },
                 ),
                 AuthenticationButton(
