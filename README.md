@@ -26,23 +26,22 @@ git clone https://github.com/TheRealKwabena/gradify-flutter/
 <br>
 
 # Pages
-## SignUp Page
-![LoginPage](assets/login.png)
+## Upload Grade Page
+![SignUpPage](frontend/assets/add_grade.png)
 
-## Login Page
-![LoginPage](assets/login.png)
-
-## Home Page
-
-
-## Upload Grade Page 
-![BookingPage](assets/booking-page.png)
-
-## Compare Students Page - Calendar View
-![Calendar](assets/calendar.png)
-![Booking](assets/book-appt.png)
+## All Actions Page
+![AllActionsPage](frontend/assets/all_actions.png)
 
 ## Home Page
+![HomePage](frontend/assets/home_page.png)
+
+
+
+## Compare Students Page
+![CompareStudents](frontend/assets/compare_student.png)
+
+
+## Rankings
 Cancelling already booked appointments is done from this page.
 
-![MyAppointments](assets/myappts-delete.png)
+![Rankings](frontend/assets/rankings.png)
