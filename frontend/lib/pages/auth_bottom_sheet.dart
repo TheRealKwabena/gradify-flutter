@@ -13,10 +13,10 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF757575),
+      color: const Color(0xFF757575),
       height: MediaQuery.of(context).size.height * 0.75,
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
@@ -33,7 +33,7 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.close),
+                  icon: const Icon(Icons.close),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 4,
@@ -46,7 +46,7 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               color: Color.fromRGBO(184, 176, 176, 0.53),
             ),
             Padding(
@@ -54,10 +54,12 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
               child: Column(
                 children: [
                   Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0)),
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromRGBO(184, 176, 176, 0.53)),
                             borderRadius:
@@ -65,22 +67,23 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
                         hintText: 'Enter your email',
                         hintStyle: GoogleFonts.montserrat(
                           textStyle: kAuthScreenTextStyle.copyWith(
-                              color: Color.fromRGBO(184, 176, 176, 0.53),
+                              color: const Color.fromRGBO(184, 176, 176, 0.53),
                               fontWeight: FontWeight.normal),
                         ),
                       ),
                     ),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 22.0,
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 20.0),
+                      padding: const EdgeInsets.symmetric(vertical: 20.0),
                       width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: Text(
                         'Continue',
                         textAlign: TextAlign.center,
@@ -90,9 +93,6 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
                           ),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(10.0)),
                     ),
                   ),
                   Text(
@@ -133,24 +133,24 @@ class _AuthBottomSheetState extends State<AuthBottomSheet> {
                   ),
 
                    */
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  SocialMediaAuthButton(
+                  const SocialMediaAuthButton(
                     imageLink: "images/apple_icon.jpg",
                     text: 'Continue with Apple',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  SocialMediaAuthButton(
+                  const SocialMediaAuthButton(
                     imageLink: "images/google_icon.jpg",
                     text: 'Continue with Google',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  SocialMediaAuthButton(
+                  const SocialMediaAuthButton(
                     imageLink: "images/facebook_icon.jpg",
                     text: 'Continue with Facebook',
                   )
@@ -169,17 +169,18 @@ class SocialMediaAuthButton extends StatelessWidget {
   final String imageLink;
   final VoidCallback? onPressed;
 
-  SocialMediaAuthButton(
-      {required this.text, required this.imageLink, this.onPressed});
+  const SocialMediaAuthButton(
+      {super.key, required this.text, required this.imageLink, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: onPressed,
-      style: OutlinedButton.styleFrom(side: BorderSide(color: Colors.black)),
+      style: OutlinedButton.styleFrom(side: const BorderSide(color: Colors.black)),
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0),
+        padding: const EdgeInsets.symmetric(vertical: 20.0),
         width: double.infinity,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -199,7 +200,6 @@ class SocialMediaAuthButton extends StatelessWidget {
             ),
           ],
         ),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
       ),
     );
   }

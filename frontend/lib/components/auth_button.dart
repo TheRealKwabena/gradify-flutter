@@ -9,7 +9,7 @@ class AuthenticationButton extends StatelessWidget {
   VoidCallback? onPressed;
 
   AuthenticationButton(
-      {required this.buttonColor,
+      {super.key, required this.buttonColor,
       required this.text,
       required this.textColor,
       this.onPressed});
@@ -18,10 +18,10 @@ class AuthenticationButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
         decoration: BoxDecoration(
           color: buttonColor,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(10.0),
           ),
         ),

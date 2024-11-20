@@ -4,12 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gradify_flutter/constants.dart';
 
 import 'package:gradify_flutter/pages/gpa_calculation_page.dart';
+import 'package:gradify_flutter/pages/BarChartSample2.dart';
+import 'package:gradify_flutter/pages/upload_grade.dart';
 
 import '../components/action_card.dart';
 
 class AllActionsPage extends StatelessWidget {
   const AllActionsPage({super.key});
-  static final String id = '/actions';
+  static const String id = '/actions';
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class AllActionsPage extends StatelessWidget {
           children: [
             Container(
               height: 113.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: kHomePageMainColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30.0),
@@ -35,7 +37,7 @@ class AllActionsPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: const Icon(Icons.arrow_back_ios),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 4,
@@ -52,29 +54,33 @@ class AllActionsPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 60, left: 10, right: 10),
-              child: Container(
+              child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.75,
                   child: GridView.count(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     mainAxisSpacing: 30.0,
                     crossAxisSpacing: 40.0,
                     crossAxisCount: 2,
                     children: [
-                      MainActionCard(
+                      const MainActionCard(
                         icon: Icons.compare_arrows_sharp,
                         text: 'Compare Student Grades',
                       ),
-                      MainActionCard(
+                      const MainActionCard(
                         icon: FontAwesomeIcons.medal,
                         text: 'See Best Performing Subjects',
                       ),
                       MainActionCard(
                         icon: Icons.cloud_upload_outlined,
                         text: 'Upload Subject Grades',
+                        onPressed: () =>
+                            Navigator.pushNamed(context, UploadGradePage.id),
                       ),
                       MainActionCard(
                         icon: Icons.auto_graph_rounded,
                         text: 'Visualize Your Academic Progress',
+                        onPressed: () =>
+                            {Navigator.pushNamed(context, BarChartSample2.id)},
                       ),
                       MainActionCard(
                         icon: FontAwesomeIcons.graduationCap,

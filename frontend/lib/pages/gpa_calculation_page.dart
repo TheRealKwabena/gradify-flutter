@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gradify_flutter/business_logic/GradifyBrain.dart';
 import 'package:gradify_flutter/constants.dart';
 
 class GPACalculationPage extends StatefulWidget {
@@ -22,10 +23,13 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
   final generatedYears = List<String>.generate(
       30, (int index) => (DateTime.now().year - index).toString(),
       growable: true);
-  var seen = Set<String>();
+  var seen = <String>{};
 
   String selectedSemester = 'All Semesters';
   String selectedYear = '2023';
+  double cumulativeScore = 0.0;
+  double gpa = 0.0;
+  GradifyBrain gradifyBrain = GradifyBrain();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,7 +38,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
           children: [
             Container(
               height: 113.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: kHomePageMainColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30.0),
@@ -47,7 +51,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                   children: [
                     IconButton(
                       onPressed: () => Navigator.pop(context),
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: const Icon(Icons.arrow_back_ios),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.20,
@@ -55,7 +59,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                     Text(
                       "Calculate GPA",
                       style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
                           fontWeight: FontWeight.w500,
@@ -71,7 +75,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 25.0,
                   ),
                   Row(
@@ -82,25 +86,25 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                               print(year);
                             }
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.filter_list,
                             color: Colors.black,
                             size: 30.0,
                           )),
                       DecoratedBox(
                         decoration: BoxDecoration(
-                            color: Color(0xFFF2F2F2),
+                            color: const Color(0xFFF2F2F2),
                             borderRadius: BorderRadius.circular(5.0)),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: DropdownButton<String>(
                             // Down Arrow Icon
                             value: selectedSemester,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 15.0,
                               color: Color(0xFF4E4A4A),
                             ),
-                            dropdownColor: Color(0xFFF2F2F2),
+                            dropdownColor: const Color(0xFFF2F2F2),
 
                             icon: const Icon(Icons.keyboard_arrow_down),
                             items: semesters.map((String semester) {
@@ -109,7 +113,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                                 child: Text(
                                   semester,
                                   style: GoogleFonts.montserrat(
-                                      textStyle: TextStyle()),
+                                      textStyle: const TextStyle()),
                                 ),
                               );
                             }).toList(),
@@ -121,29 +125,29 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20.0,
                       ),
                       DecoratedBox(
                         decoration: BoxDecoration(
-                            color: Color(0xFFF2F2F2),
+                            color: const Color(0xFFF2F2F2),
                             borderRadius: BorderRadius.circular(5.0)),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: DropdownButton<String>(
                             // Down Arrow Icon
                             value: selectedYear,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 15.0,
                               color: Color(0xFF4E4A4A),
                             ),
-                            dropdownColor: Color(0xFFF2F2F2),
+                            dropdownColor: const Color(0xFFF2F2F2),
 
                             icon: const Icon(Icons.keyboard_arrow_down),
                             items: generatedYears.map((year) {
                               return DropdownMenuItem(
-                                child: Text(year),
                                 value: year,
+                                child: Text(year),
                               );
                             }).toList(),
                             onChanged: (String? value) {
@@ -154,15 +158,23 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5.0,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            gradifyBrain.calculateCumulativeScore();
+                            gradifyBrain.calculateGPA();
+                            cumulativeScore = gradifyBrain
+                                .gpaInformation["cumulative_score"]!;
+                            gpa = gradifyBrain.gpaInformation["gpa"]!;
+                          });
+                        },
                         child: Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 10.0, vertical: 15.0),
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: kHomePageMainColor,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5.0))),
@@ -170,7 +182,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                             'APPLY',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                               color: Colors.white,
                             )),
                           ),
@@ -219,7 +231,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             Padding(
@@ -230,32 +242,30 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                     child: Container(
                       height: 270.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFF2032A6),
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.25),
-                            spreadRadius: 1,
-                            blurRadius: 4,
-                            offset: Offset(0,4)
-                          )
-                        ]
-                      ),
+                          color: const Color(0xFF2032A6),
+                          borderRadius: BorderRadius.circular(20.0),
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.25),
+                                spreadRadius: 1,
+                                blurRadius: 4,
+                                offset: Offset(0, 4))
+                          ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             'Computed GPA',
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w600)),
                           ),
                           Text(
-                            "3.97/4.0",
+                            "$gpa/4.0",
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                               color: Color(0xFF3BC741),
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -264,46 +274,44 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                           Text(
                             "Ranking: top 1%",
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: Colors.white, fontSize: 13.0)),
                           )
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Expanded(
                     child: Container(
                       height: 270.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFF2032A6),
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.25),
-                            spreadRadius: 1,
-                            blurRadius: 4,
-                            offset: Offset(0,4)
-                          )
-                        ]
-                      ),
+                          color: const Color(0xFF2032A6),
+                          borderRadius: BorderRadius.circular(20.0),
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.25),
+                                spreadRadius: 1,
+                                blurRadius: 4,
+                                offset: Offset(0, 4))
+                          ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             'Cumulative Score',
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w600)),
                           ),
                           Text(
-                            "96.85/100",
+                            "$cumulativeScore/100",
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                               color: Color(0xFF3BC741),
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -312,7 +320,7 @@ class _GPACalculationPageState extends State<GPACalculationPage> {
                           Text(
                             "Ranking: top 1%",
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: Colors.white, fontSize: 13.0)),
                           )
                         ],

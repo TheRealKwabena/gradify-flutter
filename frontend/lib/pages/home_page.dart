@@ -11,7 +11,7 @@ import '../components/action_card.dart';
 import '../components/profile_card.dart';
 
 class HomePage extends StatefulWidget {
-  static final String id = '/homepage';
+  static const String id = '/homepage';
   const HomePage({super.key});
 
   @override
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: 400.0, //MediaQuery.of(context).size.height / 2,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: kHomePageMainColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20.0),
@@ -42,39 +42,39 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back_ios,
                           ),
                         ),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.settings))
+                        IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
                       ],
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     ),
                     Center(
                       child: Column(
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             backgroundImage: AssetImage('images/neymar.jpg'),
                             backgroundColor: kHomePageMainColor,
                             radius: 50.0,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10.0,
                           ),
                           Text(
                             'James Harrison',
                             style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 24.0)),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5.0,
                           ),
                           Text(
@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () {
                                 Navigator.pushNamed(context, AllActionsPage.id);
                               },
-                              icon: Icon(Icons.arrow_forward_ios))
+                              icon: const Icon(Icons.arrow_forward_ios))
                         ],
                       ),
                     ],
@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                                 context, ComparisonChartPage.id);
                           },
                         ),
-                        MainActionCard(
+                        const MainActionCard(
                           icon: FontAwesomeIcons.medal,
                           text: 'See Best Performing Subjects',
                         ),
@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.pushNamed(context, UploadGradePage.id);
                         },
                       ),
-                      MainActionCard(
+                      const MainActionCard(
                         icon: Icons.auto_graph_rounded,
                         text: 'Visualize Your Academic Progress',
                       ),

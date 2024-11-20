@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gradify_flutter/pages/actions.dart';
 import 'package:gradify_flutter/pages/gpa_calculation_page.dart';
+import 'package:gradify_flutter/pages/BarChartSample2.dart';
 import 'package:gradify_flutter/pages/home_page.dart';
+import 'package:gradify_flutter/pages/login_page.dart';
 import 'package:gradify_flutter/pages/onboarding.dart';
 import 'package:gradify_flutter/pages/radar_chart.dart';
 import 'package:gradify_flutter/pages/upload_grade.dart';
@@ -19,12 +21,14 @@ class GradifyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: OnBoarding.id,
       routes: {
-        OnBoarding.id: (context) => OnBoarding(),
-        HomePage.id: (context) => HomePage(),
-        AllActionsPage.id: (context) => AllActionsPage(),
-        UploadGradePage.id: (context) => UploadGradePage(),
-        ComparisonChartPage.id: (context) => ComparisonChartPage(),
-        GPACalculationPage.id: (context) => GPACalculationPage()
+        OnBoarding.id: (context) => const OnBoarding(),
+        HomePage.id: (context) => const HomePage(),
+        LoginPage.id: (context) => const LoginPage(),
+        AllActionsPage.id: (context) => const AllActionsPage(),
+        UploadGradePage.id: (context) => const UploadGradePage(),
+        ComparisonChartPage.id: (context) => const ComparisonChartPage(),
+        GPACalculationPage.id: (context) => const GPACalculationPage(),
+        BarChartSample2.id: (context) => BarChartSample2()
       },
       //home: OnBoarding(),
     );
