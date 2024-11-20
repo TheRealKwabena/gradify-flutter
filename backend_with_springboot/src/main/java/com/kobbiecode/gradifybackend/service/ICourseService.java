@@ -1,5 +1,5 @@
 package com.kobbiecode.gradifybackend.service;
-/*
+
 import com.kobbiecode.gradifybackend.DTO.CourseDTO;
 import com.kobbiecode.gradifybackend.entity.Course;
 
@@ -24,4 +24,4 @@ public interface ICourseService {
 
 }
 
- */
+

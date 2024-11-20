@@ -1,5 +1,5 @@
 package com.kobbiecode.gradifybackend.service;
-/*
+
 import com.kobbiecode.gradifybackend.DTO.CourseDTO;
 import com.kobbiecode.gradifybackend.entity.Course;
 import com.kobbiecode.gradifybackend.repository.CourseRepository;
@@ -79,4 +79,3 @@ public class CourseService implements ICourseService{
         return courseRepository.findCoursesByAcademicYear(academicYear);
     }
 }
-*/
