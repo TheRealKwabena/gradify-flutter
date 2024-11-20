@@ -1,4 +1,4 @@
-/*
+
 package com.kobbiecode.gradifybackend.config;
 
 import com.kobbiecode.gradifybackend.entity.Course;
@@ -39,4 +39,3 @@ public class CourseConfiguration {
 }
 
 
-*/
