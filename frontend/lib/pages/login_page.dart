@@ -217,30 +217,36 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (email.isEmpty || loginPassword.isEmpty) {
+                              print("Fill in all the blanks");
+                            }
+                          },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.2,
                             child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 15, horizontal: 15),
-                                child: Icon(
-                                  FontAwesomeIcons.github,
-                                  color: Colors.blue,
-                                )),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 15, horizontal: 15),
+                              child: Icon(
+                                FontAwesomeIcons.github,
+                                color: Colors.blue,
+                              ),
+                            ),
                             height: 50,
                             decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                                border: Border.all(color: Color(0xFF333131)),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Color(0xFF131111D5),
-                                      spreadRadius: 5,
-                                      offset: Offset(1.0, 0.0),
-                                      blurRadius: 10)
-                                ]),
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                              border: Border.all(color: Color(0xFF333131)),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color(0xFF131111D5),
+                                    spreadRadius: 5,
+                                    offset: Offset(1.0, 0.0),
+                                    blurRadius: 10)
+                              ],
+                            ),
                           ),
                         ),
                         TextButton(
@@ -256,18 +262,21 @@ class _LoginPageState extends State<LoginPage> {
                                 )),
                             height: 50,
                             decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                                border: Border.all(color: Color(0xFF333131)),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Color(0xFF131111D5),
-                                      spreadRadius: 5,
-                                      offset: Offset(1.0, 0.0),
-                                      blurRadius: 10)
-                                ]),
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                              border: Border.all(
+                                color: Color(0xFF333131),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color(0xFF131111D5),
+                                    spreadRadius: 5,
+                                    offset: Offset(1.0, 0.0),
+                                    blurRadius: 10)
+                              ],
+                            ),
                           ),
                         ),
                         TextButton(
@@ -275,12 +284,13 @@ class _LoginPageState extends State<LoginPage> {
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.2,
                             child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 15, horizontal: 15),
-                                child: Icon(
-                                  FontAwesomeIcons.facebook,
-                                  color: Colors.blue,
-                                )),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 15, horizontal: 15),
+                              child: Icon(
+                                FontAwesomeIcons.facebook,
+                                color: Colors.blue,
+                              ),
+                            ),
                             height: 50,
                             decoration: BoxDecoration(
                                 color: Colors.transparent,
